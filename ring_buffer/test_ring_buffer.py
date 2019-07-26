@@ -1,6 +1,7 @@
 import unittest
 from ring_buffer import RingBuffer
 
+
 class RingBufferTests(unittest.TestCase):
     def setUp(self):
         self.buffer = RingBuffer(5)
@@ -18,8 +19,9 @@ class RingBufferTests(unittest.TestCase):
         self.buffer.append('e')
         self.assertEqual(len(self.buffer.storage), 5)
         self.assertEqual(self.buffer.get(), ['a', 'b', 'c', 'd', 'e'])
-
+        print(self.buffer.get())
         self.buffer.append('f')
+        print(self.buffer.get())
         self.assertEqual(len(self.buffer.storage), 5)
         self.assertEqual(self.buffer.get(), ['f', 'b', 'c', 'd', 'e'])
 
